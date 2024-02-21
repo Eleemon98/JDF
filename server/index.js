@@ -1,7 +1,7 @@
-const express = require("express");
-const cors = require("cors");
-const multer = require("multer");
-const cookieParser = require("cookie-parser");
+import express from "express";
+import cors from "cors";
+import multer from "multer";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
@@ -19,8 +19,8 @@ app.use(
 );
 app.use(cookieParser());
 
-const authRouter = require('./routes/auth');
-const postRouter = require('./routes/posts');
+import authRouter from "./routes/auth.js";
+import postRouter from "./routes/posts.js";
 
 app.use("/server/auth", authRouter);
 app.use("/server/posts", postRouter);
